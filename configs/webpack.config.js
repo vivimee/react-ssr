@@ -28,15 +28,22 @@ export default {
     optimization: {
         splitChunks: {
             chunks: 'initial',
+            cacheGroups: {
+                dll: {
+                    test: /\/(react|react-dom)\//,
+                    name: 'dll'
+                }
+            }
         },
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         ...Object.keys(entries).map(
             (entryName) =>
                 new HtmlWebpackPlugin({
+                    template: path.resolve(__dirname, '../templates/index.html'),
                     filename: `html/${entryName}.html`,
-                    excludeChunks: Object.keys(entries).filter((item) => item !== entryName),
+                    chunks: [entryName],
                 }),
         ),
     ],
