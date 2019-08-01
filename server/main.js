@@ -13,3 +13,10 @@ const watching = compiler.watch({}, (err, stats) => {
     }
     console.log(stats.toString({ colors: true }));
 });
+
+const app = new Koa();
+const router = new Router();
+
+router.get('/', () => {
+    
+})
