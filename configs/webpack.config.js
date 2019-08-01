@@ -24,6 +24,7 @@ export default {
         path: path.resolve(__dirname, '../static'),
         filename: 'js/[name].js',
         chunkFilename: 'js/[name].js',
+        publicPath: '/'
     },
     optimization: {
         splitChunks: {
@@ -37,7 +38,7 @@ export default {
         },
     },
     plugins: [
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         ...Object.keys(entries).map(
             (entryName) =>
                 new HtmlWebpackPlugin({
