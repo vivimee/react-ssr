@@ -1,4 +1,4 @@
-import render from '../utils/render';
+import render from '../../core/render-client';
 import Detail from '../pages/p2';
 
 render(Detail);

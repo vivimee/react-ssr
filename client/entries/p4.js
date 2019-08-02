@@ -1,4 +1,4 @@
 import render from '../../core/render-client';
-import Home from '../pages/p1';
+import User from '../pages/p4';
 
-render(Home);
+render(User);
